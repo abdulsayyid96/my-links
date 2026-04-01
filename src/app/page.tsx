@@ -10,6 +10,7 @@ import {
   ExternalLink,
   Globe
 } from "lucide-react";
+import { url } from "inspector";
 
 // Accent color as requested (lime green)
 // Hex provided by user was #E50914 but they said lime green.
@@ -43,6 +44,13 @@ const links = [
     icon: <Mail className="w-5 h-5 transition-colors group-hover:text-[#bef264]" />,
   },
 ];
+
+const myProfile =
+{
+  myPhoto: "url('https://img.redbull.com/images/c_crop,x_739,y_0,h_2160,w_1620/c_fill,w_450,h_600/q_auto,f_auto/redbullcom/2021/4/14/lyuguphp3zyhcxdvyfat/valorant-sova')",
+  myName: "Sayyid",
+  myBio: "Vibe Coder ✨ | Building cool stuff with AI"
+};
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -83,8 +91,8 @@ export default function LinkInBio() {
           {/* Avatar Placeholder */}
           <div className="relative mb-6">
             <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-[#bef264] to-[#84cc16] p-[2px] shadow-[0_0_20px_rgba(190,242,100,0.2)] animate-pulse-slow">
-              <div className="w-full h-full rounded-full bg-[#1a1a1a] flex items-center justify-center overflow-hidden">
-                <span className="text-3xl font-bold text-[#bef264] tracking-tighter">YN</span>
+              <div className="w-full h-full rounded-full bg-[url('https://img.redbull.com/images/c_crop,x_739,y_0,h_2160,w_1620/c_fill,w_450,h_600/q_auto,f_auto/redbullcom/2021/4/14/lyuguphp3zyhcxdvyfat/valorant-sova')] bg-contain bg-center flex items-center justify-center overflow-hidden">
+                <span className="text-3xl font-bold text-[#bef264]tracking-tighter"></span>
               </div>
             </div>
             <div className="absolute -bottom-1 -right-1 bg-[#bef264] text-black w-6 h-6 rounded-full flex items-center justify-center border-4 border-[#0a0a0a]">
@@ -92,9 +100,9 @@ export default function LinkInBio() {
             </div>
           </div>
 
-          <h1 className="text-2xl font-bold tracking-tight mb-2">Your Name</h1>
+          <h1 className="text-2xl font-bold tracking-tight mb-2">{myProfile.myName}</h1>
           <p className="text-gray-400 text-sm max-w-[280px] leading-relaxed">
-            Vibe Coder ✨ | Building cool stuff with AI
+            {myProfile.myBio}
           </p>
         </motion.div>
 
